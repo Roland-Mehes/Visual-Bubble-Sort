@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Bubble Sort Algorithm</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <button id="startBtn">Start</button>
+    <button id="playBtn">Play</button>
+    <button id="prevStep">Prev</button>
+    <button id="nextStep">Next</button>
+    <div id="animation"></div>
+    <pre>
+        <code>
+const bubbleSort = (list) => {
+    const arr = [...list];
+    let swapped = true;
+    do {
+        swapped = false;
+        for(let i=0; i<arr.length; i++){
+            if(arr[i] > arr[i + 1]){
+                const temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+                animationSteps.push([...arr]);
+            }
+        }
+    } while(swapped)
+    return arr;
+}
+        </code>
+    </pre>
+    <script src="./index.js"></script>
+</body>
+</html>
